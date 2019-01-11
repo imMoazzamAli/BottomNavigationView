@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
-        //returning true will pop up the selected item
+        //returning true will pop up the selected item.
         //returning false will not highlight the selected item
         return true;
     }
