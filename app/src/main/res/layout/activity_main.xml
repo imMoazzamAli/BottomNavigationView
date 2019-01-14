@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemBackground="@drawable/nav_item_background"
+        app:itemIconTint="#000"
         app:itemTextColor="@drawable/nav_item_color_state"
         app:menu="@menu/bottom_navigation" />
 
