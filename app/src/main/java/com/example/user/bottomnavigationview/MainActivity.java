@@ -20,11 +20,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.nav_Favorite);
+
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
         Fragment fragment = null;
 
         switch (menuItem.getItemId()) {
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         } else {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
         }
-        //returning true will pop up the selected item.
+        //returning true will popUp/highlight the selected item.
         //returning false will not highlight the selected item
         return true;
     }

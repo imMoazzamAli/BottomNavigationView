@@ -3,8 +3,10 @@ package com.example.user.bottomnavigationview;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +21,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private TextInputLayout tilName;
     private EditText etName;
 
-    private Button btnShow;
+    protected Button btnShow;
 
     @Nullable
     @Override
@@ -29,7 +31,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         tilName = view.findViewById(R.id.tilName);
         etName = view.findViewById(R.id.etName);
-
         btnShow = view.findViewById(R.id.btnShow);
 
         btnShow.setOnClickListener(this);
@@ -37,12 +38,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-
     private void showData() {
-        Toast.makeText(getActivity(), "Value: " + etName.getText().toString(), Toast.LENGTH_SHORT).show();
+        String valueET = etName.getText().toString();
+
+        if (TextUtils.isEmpty(valueET)) {
+            tilName.setError("Field required Edit Text");
+        }
 
     }
-
 
     @Override
     public void onClick(View v) {
